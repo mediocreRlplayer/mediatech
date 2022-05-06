@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  
+}
+body{
+    background-image: url('./assets/Sitebg.png');
+    background-size: cover;
+    display: flex;
+}
+
+.deck{
+    width: 450px;
+    height: 650px;
+    overflow: hidden;
+    top: 40%;
+    left: 45%;
+    position: absolute;
+    background-color: white;
+}
+.flip{
+    perspective: 850px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: transparent;
+}
+.card1, .card2, .card3, .card4{
+    margin: 10px 25px;
+    width: 425px;
+    height: 625px;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: black;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+ .card1:hover, .card2:hover, .card3:hover, .card4:hover {
+    transform: rotateY(180deg)
+}
+.front, .back{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.card1 h1, .card2 h1, .card3 h1, .card4 h1{
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 6px #fff, 0 0 14px #f0f, 0 0 24px #f0f;
+}
+
+.hide{
+    display: none;
+}
+.front{
+    transform: none;
+}
+.back{
+    transform: rotateY(180deg);
+}
