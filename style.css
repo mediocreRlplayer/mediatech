@@ -7,7 +7,7 @@
 body{
     background-image: url('./assets/Sitebg.png');
     background-size: cover;
-    display: flex;
+    height: 100%;
 }
 
 .deck{
@@ -20,11 +20,29 @@ body{
     background-color: white;
 }
 .flip{
-    perspective: 850px;
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
+    perspective: 1400px;
+    position: relative;
     background-color: transparent;
+}
+.card1{
+    position: absolute;
+    top: 45%;
+    left: 0px;
+}
+.card2{
+    position: absolute;
+    top: 10%;
+    left: 27%;
+}
+.card3{
+    position: absolute;
+    top: 10%;
+    left: 64%;
+}
+.card4{
+    position: absolute;
+    top: 40%;
+    right: 0px;
 }
 .card1, .card2, .card3, .card4{
     margin: 10px 25px;
@@ -39,15 +57,26 @@ body{
  .card1:hover, .card2:hover, .card3:hover, .card4:hover {
     transform: rotateY(180deg)
 }
+.card1:hover .front, .card2:hover .front, .card3:hover .front, .card4:hover .front{
+    transform: rotateY(180deg);
+}
 .front, .back{
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
 .card1 h1, .card2 h1, .card3 h1, .card4 h1{
-    font-size: 25px;
+    text-align: center;
+    font-size: 50px;
+    text-decoration: underline;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 6px #fff, 0 0 14px #f0f, 0 0 24px #f0f;
+}
+.card1 h3, .card2 h3, .card3 h3, .card4 h3{
+    line-height: 1.4;
     font-weight: lighter;
     color: rgb(255, 255, 255);
     text-shadow: 0 0 6px #fff, 0 0 14px #f0f, 0 0 24px #f0f;
@@ -56,9 +85,12 @@ body{
 .hide{
     display: none;
 }
-.front{
-    transform: none;
-}
+
 .back{
     transform: rotateY(180deg);
+}
+#flipped{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }
